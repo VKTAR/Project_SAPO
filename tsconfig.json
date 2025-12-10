@@ -26,9 +26,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
-  ],
+    ".next/types/**/*.ts"
+    // REMOVED: ".next/dev/types/**/*.ts" <--- This line caused the error
+    // ADDED BACK: "**/*.mts" is usually not needed unless you use MJS modules. Let's stick to the common pattern.
+, ],
   "exclude": ["node_modules"]
 }
