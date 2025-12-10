@@ -14,10 +14,15 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000", # For local development
+    "https://project-sapo-blond.vercel.app", # <-- PASTE YOUR URL HERE!
+]
+
 # Allow frontend access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # you can restrict this later
+    allow_origins=origins,  # you can restrict this later
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
